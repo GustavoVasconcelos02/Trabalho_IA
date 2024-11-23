@@ -1,20 +1,20 @@
 from sklearn.model_selection import train_test_split
 from utils.pdf_utils import carregar_pdfs_de_diretorios
-from utils.text_preprocessing import limpar_textos
+from utils.text_preprocessing import limpar_lista_textos
 from utils.vectorizer import criar_matriz_bow
 
 # Diretórios dos PDFs
 diretorios = {
-    'poesia': 'pdfs/poesia/',
-    'prosa': 'pdfs/prosa/',
-    'jornalismo': 'pdfs/jornalismo/'
+    'poesia': 'src/pdfs/poesia/',
+    'prosa': 'src/pdfs/prosa/',
+    'jornalismo': 'src/pdfs/jornalismo/'
 }
 
 # 1. Carregar textos e classes
 textos, classes = carregar_pdfs_de_diretorios(diretorios)
 
 # 2. Pré-processar os textos
-textos_limpos = limpar_textos(textos)
+textos_limpos = limpar_lista_textos(textos)
 
 # 3. Criar a matriz Bag of Words
 vectorizer, X = criar_matriz_bow(textos_limpos)
