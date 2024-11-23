@@ -1,10 +1,11 @@
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk import download
 import nltk
 
 # Baixar recursos do NLTK (apenas na primeira execução)
-nltk.download('punkt')
-nltk.download('stopwords')
+download('punkt')
+download('stopwords')
 
 # Limpa o texto removendo pontuações, stopwords e convertendo para minúsculas
 def limpar_texto(texto):
